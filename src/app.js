@@ -7,6 +7,7 @@ import petsRouter from './routes/pets.router.js';
 import adoptionsRouter from './routes/adoption.router.js';
 import sessionsRouter from './routes/sessions.router.js';
 import mocksRouter from './routes/mocks.router.js';
+import setupSwagger from './utils/swagger.js';
 
 import { env, loadEnvFile } from "node:process";
 
@@ -31,4 +32,5 @@ app.use('/api/adoptions', adoptionsRouter);
 app.use('/api/sessions', sessionsRouter);
 app.use('/api/mock', mocksRouter);
 
+setupSwagger(app);
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
